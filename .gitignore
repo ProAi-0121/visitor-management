@@ -1,0 +1,30 @@
+*.iml
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+
+# local/private files - never publish
+backup/
+.env
+zippedhawh.zip
+*.log
+
+# backend runtime data & WhatsApp session (contains real visitor records and credentials)
+backend/node_modules/
+backend/src/node_modules/
+backend/src/.wwebjs_auth/
+backend/src/.wwebjs_cache/
+backend/data/
+backend/uploads/
+
