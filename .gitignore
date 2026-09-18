@@ -28,3 +28,6 @@ backend/src/.wwebjs_cache/
 backend/data/
 backend/uploads/
 
+
+__pycache__/
+*.pyc

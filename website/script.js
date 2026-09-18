@@ -50,11 +50,11 @@ function updateDashboard(data) {
             flats.forEach(flat => uniqueFlats.add(flat.trim()));
         }
     });
-.size
+
     // Update statistics
     todayVisitorsEl.textContent = todayVisitors;
     currentVisitorsEl.textContent = currentVisitors;
-    totalFlatsEl.textContent = uniqueFlats;
+    totalFlatsEl.textContent = uniqueFlats.size;
 
     // Update visitors grid with most recent first
     updateVisitorsGrid(data.reverse().slice(0, 50)); // Show last 50 visitors
@@ -97,9 +97,7 @@ function createVisitorCard(visitor) {
 
 // Show visitor details in modal
 function showVisitorDetails(visitor) {
-    const imageUrl = `${API_URL}/static/peoples/${visitor.image}`;
     modalImage.src = visitor.imagePath ? `http://localhost:2222/data/${new Date().getFullYear()}/${new Date().toLocaleString('default', { month: 'long' })}/Images/${visitor.imagePath}` : 'https://via.placeholder.com/150?text=No+Image';
-    modalImage.src = imageUrl;
     modalImage.onerror = () => {
         modalImage.src = 'https://via.placeholder.com/150?text=No+Image';
     };
@@ -107,7 +105,7 @@ function showVisitorDetails(visitor) {
     modalFlat.textContent = `Visiting Flat: ${visitor.flatNumbers}`;
     modalTime.textContent = `Arrival: ${formatTime(visitor.timestamp)}`;
     modalPhone.textContent = `Phone: ${visitor.phoneNumber || 'Not provided'}`;
-    modalPurpose.textContent = `Purpose: Visitor Alert
+    modalPurpose.textContent = 'Purpose: Visitor Alert';
 }
 
 // Helper function to format timestamps

@@ -89,7 +89,7 @@ def main():
     script_dir = os.path.dirname(os.path.abspath(__file__))
     
     # Define paths
-    logo_path = os.path.join(script_dir, '..', 'app', 'src', 'main', 'res', 'drawable', 'logo.png')
+    logo_path = os.path.join(script_dir, '..', 'assets', 'logo.png')
     output_base_path = os.path.join(script_dir, '..', 'app', 'src', 'main', 'res')
     
     # Check if logo exists
